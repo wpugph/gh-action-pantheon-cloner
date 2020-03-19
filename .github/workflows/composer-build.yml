@@ -27,9 +27,11 @@ jobs:
         export GITHUB_BRANCH=${GITHUB_REF##*heads/}
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
     # - uses: actions/checkout@v1
-    
-    - name: Setup SSH access to Pantheon
+    - name: call script
+      run: ./.github/buildscripts/composerSetup.sh
 
+    - name: Setup SSH access to Pantheon
+      run: |
         # setup SSH access
         printf "[\e[0;34mNOTICE\e[0m] Setting up SSH access to server for rsync usage.\n"
         SSH_DIR="$HOME/.ssh"
