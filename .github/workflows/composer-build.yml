@@ -1,15 +1,10 @@
 name: Pantheon Build
-
 on: [push]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup SSH access to Pantheon
+    - name: Declare variables
       run: |
         # define settings here
         # export PANTHEONEMAIL="cralberto11@gmail.com"
@@ -31,7 +26,9 @@ jobs:
         export PROJECT_ROOT="$(pwd)"
         export GITHUB_BRANCH=${GITHUB_REF##*heads/}
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
-
+    # - uses: actions/checkout@v1
+    
+    - name: Setup SSH access to Pantheon
 
         # setup SSH access
         printf "[\e[0;34mNOTICE\e[0m] Setting up SSH access to server for rsync usage.\n"
@@ -101,5 +98,7 @@ jobs:
 
         /home/runner/terminus/vendor/bin/terminus art
         /home/runner/terminus/vendor/bin/terminus -V
+
+        terminus backup:list carltest1.dev
 
         printf "[\e[0;34mNOTICE\e[0m] Success BUILD!!!.\n"
