@@ -12,7 +12,8 @@ jobs:
     - name: Setup SSH access to Pantheon
       run: |
         # define settings here
-        export PANTHEONEMAIL="cralberto11@gmail.com"
+        # export PANTHEONEMAIL="cralberto11@gmail.com"
+        export PANTHEONEMAIL="${{ secrets.PANTHEONEMAIL }}"
         export REFERENCE_SITE_URL='https://live-gh-action1.pantheonsite.io/'
         # echo $PANTHEONEMAIL
 
