@@ -14,7 +14,7 @@ jobs:
         # define settings here
         export PANTHEONEMAIL="cralberto11@gmail.com"
         export REFERENCE_SITE_URL='https://live-gh-action1.pantheonsite.io/'
-        echo $PANTHEONEMAIL
+        # echo $PANTHEONEMAIL
 
 
         export PANTHEONSITENAME="gh-action1"
@@ -30,7 +30,8 @@ jobs:
         export PROJECT_ROOT="$(pwd)"
         export GITHUB_BRANCH=${GITHUB_REF##*heads/}
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
-        
+
+
         # setup SSH access
         printf "[\e[0;34mNOTICE\e[0m] Setting up SSH access to server for rsync usage.\n"
         SSH_DIR="$HOME/.ssh"
@@ -42,6 +43,7 @@ jobs:
         echo "${{ secrets.STAGING_PRIVATE_KEY }}" > "$SSH_DIR/id_rsa1"
         chmod 600 "$SSH_DIR/id_rsa1"
         chmod 600 "$SSH_DIR/config"
+        ssh-add -l
         eval "$(ssh-agent -s)"
         ssh-add "$SSH_DIR/id_rsa1"
         ssh-add -l
