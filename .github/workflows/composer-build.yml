@@ -37,11 +37,11 @@ jobs:
         export PROJECT_ROOT="$(pwd)"
         export GITHUB_BRANCH=${GITHUB_REF##*heads/}
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
-    # - uses: actions/checkout@v1
+        # - uses: actions/checkout@v1
         ls
 
-    # - name: call script
-    #   run: ./buildscripts/composerSetup.sh
+        # - name: call script
+        #   run: ./buildscripts/composerSetup.sh
 
     - name: Setup SSH access to Pantheon
       run: |
