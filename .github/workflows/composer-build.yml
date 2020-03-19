@@ -43,7 +43,6 @@ jobs:
         echo "${{ secrets.STAGING_PRIVATE_KEY }}" > "$SSH_DIR/id_rsa1"
         chmod 600 "$SSH_DIR/id_rsa1"
         chmod 600 "$SSH_DIR/config"
-        ssh-add -l
         eval "$(ssh-agent -s)"
         ssh-add "$SSH_DIR/id_rsa1"
         ssh-add -l
