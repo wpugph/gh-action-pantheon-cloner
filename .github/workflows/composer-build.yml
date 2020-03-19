@@ -4,8 +4,7 @@ on: [push]
 
 jobs:
   docker:
-    image: 
-    - quay.io/pantheon-public/php-ci:2.x
+    image: quay.io/pantheon-public/php-ci:2.x
     #  steps:
     # - uses: actions/checkout@v1
     - name: Setup SSH access to Pantheon
