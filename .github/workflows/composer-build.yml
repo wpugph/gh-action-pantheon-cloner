@@ -82,9 +82,9 @@ jobs:
         # terminus auth:login --machine-token=$MACHINETOKEN
         # terminus auth:login --email=$PANTHEONEMAIL
 
-        /home/runner/terminus/vendor/bin/terminus auth:login --machine-token=$MACHINETOKEN
+        # /home/runner/terminus/vendor/bin/terminus auth:login --machine-token=$MACHINETOKEN
         # /home/runner/terminus/vendor/bin/terminus auth:login --email=$PANTHEONEMAIL
-        /home/runner/terminus/vendor/bin/terminus auth:login --email=carl.alberto@pantheon.io
+        /home/runner/terminus/vendor/bin/terminus auth:login --machine-token=$MACHINETOKEN --email=carl.alberto@pantheon.io
 
 
         # make rsync work for site duplication
@@ -99,4 +99,7 @@ jobs:
         # create tutorials, automating your WP builds in GitHub
         # convert ph_tech to nested docroot
 
-        return 1
+        /home/runner/terminus/vendor/bin/terminus art
+        /home/runner/terminus/vendor/bin/terminus -V
+
+        printf "[\e[0;34mNOTICE\e[0m] Success BUILD!!!.\n"
