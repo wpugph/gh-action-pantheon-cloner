@@ -4,6 +4,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
     - uses: actions/checkout@v1
     - name: Declare variables
       run: |
@@ -29,9 +39,9 @@ jobs:
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
     # - uses: actions/checkout@v1
         ls
-        
-    - name: call script
-      run: ./buildscripts/composerSetup.sh
+
+    # - name: call script
+    #   run: ./buildscripts/composerSetup.sh
 
     - name: Setup SSH access to Pantheon
       run: |
