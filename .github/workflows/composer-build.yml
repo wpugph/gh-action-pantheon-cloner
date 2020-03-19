@@ -47,6 +47,11 @@ jobs:
         ssh-add "$SSH_DIR/id_rsa1"
         ssh-add -l
         echo "SSH PRIVATE KEY IMPORTED!!!"
+
+        git clone ssh://codeserver.dev.01507cf9-d5e7-460d-83ee-5587a03e7d9a@codeserver.dev.01507cf9-d5e7-460d-83ee-5587a03e7d9a.drush.in:2222/~/repository.git carltest1
+
+        cd carltest1
+        ls
         # sh $PROJECT_ROOT/scripts/github/setup-terminus
         # sh $PROJECT_ROOT/scripts/github/build-wp-composer
         #https://admin.dashboard.pantheon.io/sites/a22f4a40-0025-4878-ae51-babe2e978c49
