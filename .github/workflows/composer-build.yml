@@ -4,6 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - name: Declare variables
       run: |
         # define settings here
@@ -28,7 +29,6 @@ jobs:
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
     # - uses: actions/checkout@v1
     - name: call script
-      uses: actions/checkout@v1
       run: ./buildscripts/composerSetup.sh
 
     - name: Setup SSH access to Pantheon
