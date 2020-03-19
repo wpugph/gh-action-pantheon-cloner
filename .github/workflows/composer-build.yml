@@ -76,6 +76,9 @@ jobs:
 
         terminus -V
 
+        terminus auth:login --machine-token=$MACHINETOKEN
+        terminus auth:login --email=$PANTHEONEMAIL
+
         # make rsync work for site duplication
 
         # sh $PROJECT_ROOT/scripts/github/setup-terminus
