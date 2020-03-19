@@ -83,7 +83,8 @@ jobs:
         # terminus auth:login --email=$PANTHEONEMAIL
 
         /home/runner/terminus/vendor/bin/terminus auth:login --machine-token=$MACHINETOKEN
-        /home/runner/terminus/vendor/bin/terminus auth:login --email=$PANTHEONEMAIL
+        # /home/runner/terminus/vendor/bin/terminus auth:login --email=$PANTHEONEMAIL
+        /home/runner/terminus/vendor/bin/terminus auth:login --email=carl.alberto@pantheon.io
 
 
         # make rsync work for site duplication
@@ -97,3 +98,5 @@ jobs:
         # pattern with https://github.com/pantheon-systems/example-wordpress-composer
         # create tutorials, automating your WP builds in GitHub
         # convert ph_tech to nested docroot
+
+        return 1
