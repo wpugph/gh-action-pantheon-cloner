@@ -74,12 +74,12 @@ jobs:
 
         ls
 
-        alias terminus=/home/runner/terminus/vendor/bin/terminus
+        # alias terminus=/home/runner/terminus/vendor/bin/terminus
 
-        terminus -V
+        # terminus -V
 
-        terminus auth:login --machine-token=$MACHINETOKEN
-        terminus auth:login --email=$PANTHEONEMAIL
+        # terminus auth:login --machine-token=$MACHINETOKEN
+        # terminus auth:login --email=$PANTHEONEMAIL
 
         /home/runner/terminus/vendor/bin/terminus auth:login --machine-token=$MACHINETOKEN
         /home/runner/terminus/vendor/bin/terminus auth:login --email=$PANTHEONEMAIL
