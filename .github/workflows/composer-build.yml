@@ -106,7 +106,7 @@ jobs:
         /home/runner/terminus/vendor/bin/terminus art
         /home/runner/terminus/vendor/bin/terminus -V
 
-        terminus backup:list carltest1.dev
+        /home/runner/terminus/vendor/bin/terminus backup:list carltest1.dev
 
         printf "[\e[0;34mNOTICE\e[0m] Success BUILD!!!.\n"
 
