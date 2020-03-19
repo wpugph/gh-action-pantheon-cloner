@@ -17,12 +17,13 @@ jobs:
 
   #   runs-on: ubuntu-latestß
 
-  #   steps:
-  #   - uses: actions/checkout@v1
-  #   - name: Setup SSH access to Pantheon
-  #     run: |
-  #       # define settings here
-  #       export PANTHEONEMAIL="cralberto11@gmail.com"
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup SSH access to Pantheon
+      run: |
+        # define settings here
+        export PANTHEONEMAIL="cralberto11@gmail.com"
+        echo $PANTHEONEMAIL
   #       export REFERENCE_SITE_URL='https://live-gh-action1.pantheonsite.io/'
   #       export PANTHEONSITENAME="gh-action1"
   #       export PANTHEONSITEUUID="a22f4a40-0025-4878-ae51-babe2e978c49"
