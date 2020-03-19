@@ -28,10 +28,12 @@ jobs:
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
     # - uses: actions/checkout@v1
     - name: call script
+      uses: actions/checkout@v1
       run: ./buildscripts/composerSetup.sh
 
     - name: Setup SSH access to Pantheon
       run: |
+        ls
         # setup SSH access
         printf "[\e[0;34mNOTICE\e[0m] Setting up SSH access to server for rsync usage.\n"
         SSH_DIR="$HOME/.ssh"
