@@ -4,6 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
+    ## to test for caching
     - name: Get Composer Cache Directory
       id: composer-cache
       run: |
@@ -14,6 +16,7 @@ jobs:
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-composer-
+
     - uses: actions/checkout@v1
     - name: Declare variables
       run: |
