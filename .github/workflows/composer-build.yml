@@ -64,8 +64,14 @@ jobs:
         # ssh-add -l
         # cd $ROOTPWD
         php composer.phar install
-        composer global require consolidation/cgr
-        cgr --stability RC pantheon-systems/terminus
+
+        cgr not working
+        # composer global require consolidation/cgr
+        # cgr --stability RC pantheon-systems/terminus
+
+        wget https://github.com/pantheon-systems/terminus/releases/download/2.3.0/terminus.phar -O $HOME/bin/
+        terminus -V
+
         # sh $PROJECT_ROOT/scripts/github/setup-terminus
         # sh $PROJECT_ROOT/scripts/github/build-wp-composer
         #https://admin.dashboard.pantheon.io/sites/a22f4a40-0025-4878-ae51-babe2e978c49
