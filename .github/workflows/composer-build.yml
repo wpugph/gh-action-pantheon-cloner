@@ -9,6 +9,7 @@ jobs:
     #  steps:
     # - uses: actions/checkout@v1
     - name: Setup SSH access to Pantheon
+      runs-on: ubuntu-latest
       run: |
         # define settings here
         export PANTHEONEMAIL="cralberto11@gmail.com"
