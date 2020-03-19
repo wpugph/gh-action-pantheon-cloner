@@ -28,6 +28,8 @@ jobs:
         export GITHUB_BRANCH=${GITHUB_REF##*heads/}
         export MACHINETOKEN="${{ secrets.MACHINETOKEN }}"
     # - uses: actions/checkout@v1
+        ls
+        
     - name: call script
       run: ./buildscripts/composerSetup.sh
 
